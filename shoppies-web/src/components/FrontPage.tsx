@@ -58,6 +58,7 @@ const FrontPage: React.FC<FrontPageProps> = ({}) => {
                             </HStack>
                         </li>
                     </ul>
+                    <Text mt={3}>By Tobias Schlagenhaufer.</Text>
                 </Box>
             </Box>
         </Box>
