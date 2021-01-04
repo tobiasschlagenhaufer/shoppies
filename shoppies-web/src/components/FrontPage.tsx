@@ -17,9 +17,11 @@ const FrontPage: React.FC<FrontPageProps> = ({}) => {
             <Box mt={4} borderRadius="lg" bg="gray.900" p="10">
                 <HStack>
                     <Heading fontSize="4xl" alignSelf="center">Welcome to the Shoppies!</Heading>
-                    <Button colorScheme="facebook" leftIcon={<FaGithub />}>
-                        Code Availble on Github
-                    </Button>
+                    <Link href="https://github.com/tobiasschlagenhaufer/shoppies/tree/master" target="_blank">
+                        <Button colorScheme="facebook" leftIcon={<FaGithub />}>
+                            Code Availble on Github
+                        </Button>
+                    </Link>
                 </HStack>
                 <Text fontSize="xl" fontWeight="thin" mt={10}>
                     <NextLink href="/login"><Link fontWeight="bold">Login</Link></NextLink>
