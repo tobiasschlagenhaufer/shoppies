@@ -1,0 +1,8 @@
+mutation RemoveMovieFromUser($imdbId: String!){
+	removeMovieFromUser(imdbId: $imdbId) {
+		movie{
+			...MovieInfo
+		}
+		error
+	}
+}

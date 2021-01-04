@@ -1,0 +1,8 @@
+query TopNominations{
+	topNominations{
+        ...MovieInfo
+        users{
+            id
+        }
+    }
+}

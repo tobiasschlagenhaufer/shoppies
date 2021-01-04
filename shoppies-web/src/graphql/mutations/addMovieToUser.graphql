@@ -1,0 +1,8 @@
+mutation AddMovieToUser($imdbId: String!, $title: String!, $year: Int!, $poster: String!){
+	addMovieToUser(imdbId: $imdbId, title: $title, year: $year, poster: $poster) {
+		movie{
+			...MovieInfo
+		}
+		error
+	}
+}

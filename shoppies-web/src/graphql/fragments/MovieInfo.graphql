@@ -1,0 +1,7 @@
+fragment MovieInfo on Movie {
+    id
+    imdbId
+    title
+    year
+    poster
+}

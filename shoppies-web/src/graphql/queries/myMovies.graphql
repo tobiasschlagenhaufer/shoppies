@@ -1,0 +1,5 @@
+query MyMovies{
+	myMovies{
+        ...MovieInfo
+    }
+}
