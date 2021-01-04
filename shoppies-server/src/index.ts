@@ -1,4 +1,5 @@
 import "reflect-metadata";
+import "dotenv-safe/config"
 import { MikroORM } from "@mikro-orm/core";
 import microConfig from "./mikro-orm.config";
 import express from "express";
@@ -19,9 +20,12 @@ const main = async () => {
 
 	const app = express();
 
+	// set a proxy so dokku handles our cookies & sessions
+	app.set('proxy', 1);
+
 	// use cors my own cors instead of built in
 	app.use(cors({
-		origin: "http://localhost:3000",
+		origin: process.env.CORS_ORIGIN,
 		credentials: true,
 	}));
 
@@ -29,15 +33,15 @@ const main = async () => {
 	app.use(session({
 		name: "qid",
 		store: new pgSession({
-			conString: "postgresql://postgres:postgres@127.0.0.1:5432/shoppies"
+			conString: process.env.DATABASE_URL
 		}),
-		secret: "efjsnkjhfejkfxczsfqwdpl",
+		secret: process.env.SESSION_SECRET,
 		resave: false,
 		cookie: { 
-			maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+			maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
 			httpOnly: process.env.NODE_ENV === "production",
 			secure: process.env.NODE_ENV === "production",
-			sameSite: "strict"
+			sameSite: "lax"
 		},
 		saveUninitialized: false
 	}));
@@ -58,8 +62,8 @@ const main = async () => {
 	});
 	
 	// start server
-	app.listen(4000, () => {
-		console.log("Server started on port 4000")
+	app.listen(parseInt(process.env.PORT), () => {
+		// console.log("Server started on port 4000")
 	})
 }
 
