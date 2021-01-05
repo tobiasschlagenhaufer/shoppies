@@ -1,6 +1,8 @@
 # [shoppies.sexy](https://shoppies.sexy) :fire:
 Shopify Web Developer Project which allows users to make an account and nominate their favourite movies for the "Shoppies".
 
+![alt text](./shoppies-home.png)
+
 :heavy_check_mark: Users can share nominations to **Twitter** so that no one will think they have a bad taste in movies. \
 :heavy_check_mark: Allows users to create accounts to persist their nominations to **PostgreSQL database** \
 &emsp;&nbsp;&nbsp; through **GraphQL**. \
@@ -22,11 +24,7 @@ Back end:
 * PostgresQL 15
 * Docker :whale:
 	
-## Setup
-To run this project, install it locally using npm:
 
 ```
-$ cd ../lorem
-$ npm install
-$ npm start
+
 ```
