@@ -1,4 +1,4 @@
-# [shoppies.sexy](https://shoppies.sexy) :fire:
+# [shoppies](https://shoppies.sexy) :fire:
 Shopify Web Developer Project which allows users to make an account and nominate their favourite movies for the "Shoppies".
 
 ![alt text](./shoppies-home.png)
