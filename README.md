@@ -8,6 +8,9 @@ Shopify Web Developer Project which allows users to make an account and nominate
 &emsp;&nbsp;&nbsp; through **GraphQL**. \
 :heavy_check_mark: Features **Top Nominations page** to see what movies are currently ahead! \
 :heavy_check_mark: Shout out to [omdbAPI](http://www.omdbapi.com/)
+
+## GraphQL Request Architecture
+![alt text](./login.png)
 	
 ## Technologies
 Front end:
