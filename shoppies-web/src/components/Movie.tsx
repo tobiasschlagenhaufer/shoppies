@@ -31,7 +31,10 @@ export const Movie: React.FC<MovieProps> = (movie) => {
 		<Box
 			bg="gray.700"
 			minW="100px"
-			maxW={movie.variant == "Result" ? "9%" : "15%"}
+			// h=""
+			// maxW={movie.variant == "Result" ? "9%" : "15%"}
+			
+			maxW={movie.variant == "Result" ? "138px" : "200px"}
 			borderWidth="1px"
 			borderRadius="lg"
 			overflow="hidden"
@@ -41,7 +44,7 @@ export const Movie: React.FC<MovieProps> = (movie) => {
 			}}
 		>
 			<Image 
-				h={movie.variant == "Result" ? "60%" : "70%"}
+				h={movie.variant == "Result" ? "200px" : "250px"}
 				src={src}
 				fallback={
 					<Spinner 
@@ -103,7 +106,7 @@ export const Movie: React.FC<MovieProps> = (movie) => {
 											if (result.data.refreshMovies.length == 5) {
 												toast({
 													title: "All done!",
-													description: "You've nominated 5 movies, you're good to go.",
+													description: "You've nominated 5 movies.\nThey are now added and will count towards the Shoppies.",
 													status: "success",
 													duration: 9000,
 													isClosable: true,

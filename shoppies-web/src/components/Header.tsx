@@ -57,10 +57,12 @@ export const Header: React.FC<HeaderProps> = (props) => {
 				pt={2}
 				pb={2}
 			>
-				<Flex align="center">
-					<Logo />
-					<Text fontSize="4xl" color="white" fontFamily={"Trebuchet MS"} fontStyle="italic">hoppies</Text>
-				</Flex>
+				<NextLink href={"/"}><Link>
+					<Flex align="center">
+						<Logo />
+						<Text fontSize="4xl" color="white" fontFamily={"Trebuchet MS"} fontStyle="italic">hoppies</Text>
+					</Flex>
+				</Link></NextLink>
 
 				<Box display={{ base: "block", md: "none" }} onClick={toggleMenu}>
 					{show ? <CloseIcon /> : <ChevronDownIcon />}
@@ -79,7 +81,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
 						pt={[4, 4, 0, 0]}
 					>
 						{!router.pathname.includes("nominees") ? 
-							<MenuItems to="nominees" myvariant="link">Nominees</MenuItems>
+							<MenuItems to="nominees" myvariant="link">Top Nominees</MenuItems>
 						:
 							<MenuItems to="/" myvariant="link">Home</MenuItems>
 						}
@@ -112,12 +114,12 @@ export const Header: React.FC<HeaderProps> = (props) => {
 				:
 					<Flex>
 						{!router.pathname.includes("nominees") ? 
-							<MenuItems to="nominees" myvariant="link">Nominees</MenuItems>
+							<MenuItems to="nominees" myvariant="link">Top Nominees</MenuItems>
 						:
 							<MenuItems to="/" myvariant="link">Home</MenuItems>
 						}
-						<MenuItems to="login" bg="white" colorScheme="teal" border="thin white solid" mr={2} myvariant="Button">Sign In</MenuItems>
-						<MenuItems to="register" bg="white" colorScheme="teal" border="thin white solid" myvariant="Button">Register</MenuItems>
+						<MenuItems to="login" colorScheme="teal" border="thin white solid" mr={2} myvariant="Button">Sign In</MenuItems>
+						<MenuItems to="register" colorScheme="teal" border="thin white solid" myvariant="Button">Register</MenuItems>
 					</Flex>
 				}
 				</Box>

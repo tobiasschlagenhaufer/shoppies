@@ -21,7 +21,7 @@ const main = async () => {
 	const app = express();
 
 	// set a proxy so dokku handles our cookies & sessions
-	app.set('proxy', 1);
+	app.set('trust proxy', true);
 
 	// use cors my own cors instead of built in
 	app.use(cors({

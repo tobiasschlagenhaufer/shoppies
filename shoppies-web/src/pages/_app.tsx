@@ -17,7 +17,11 @@ function updateQuery2<Result, Query>(
 const client = createClient({
   url: process.env.NEXT_PUBLIC_API_URL,
   fetchOptions: {
-    credentials: "include"
+    credentials: "include",
+    // mode: 'no-cors'
+    // headers: {
+    //   'Access-Control-Allow-Origin': '*'
+    // },
   },
   // hardset graphql query values after hook call to update cache
   exchanges: [dedupExchange, cacheExchange({

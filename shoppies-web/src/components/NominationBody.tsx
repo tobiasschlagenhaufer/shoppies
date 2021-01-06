@@ -4,6 +4,7 @@ import { Box, Button } from "@chakra-ui/react";
 import { SearchBar } from "./SearchBar";
 import { Movie } from "./Movie";
 import { FaTwitter } from "react-icons/fa";
+import { Heading } from "@chakra-ui/core";
 
 type NominationBodyProps = {
     movies: ImdbMovie[]
@@ -30,7 +31,7 @@ export const NominationBody: React.FC<NominationBodyProps> = ({movies, refreshMo
                 refreshMovies={refreshMovies}
                 nominatedMovies={movies}
             />
-          Your Nominations
+          <Heading fontSize="xl">Your Nominations</Heading>
           <Box p={4} d="flex" flexWrap="wrap"  borderRadius="lg" bg="gray.900">
             {movies.map(movie => (
                 <Movie

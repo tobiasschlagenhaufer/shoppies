@@ -1,8 +1,9 @@
 import { Box, Heading, Text, Image, Link, Button, HStack, VStack } from '@chakra-ui/react';
 import React from 'react'
-import NextLink from "next/link"
+import NextLink from 'next/link'
 import { FaGithub, FaReact } from 'react-icons/fa'
 import { SiGraphql, SiNodeDotJs, SiPostgresql, SiTypescript } from 'react-icons/si'
+import { Cover } from './Cover'
 
 interface FrontPageProps {
 
@@ -13,13 +14,13 @@ const FrontPage: React.FC<FrontPageProps> = ({}) => {
         <Box pt={0} textAlign="left">
             
             {/* <Heading fontSize="4xl">Welcome </Heading> */}
-            <Image mt={2} borderRadius="lg" src={"https://i.ibb.co/HKkGFht/Group-69.png"} w="100%"/>
+            <Cover w="100%"/>
             <Box mt={4} borderRadius="lg" bg="gray.900" p="10">
                 <HStack>
                     <Heading fontSize="4xl" alignSelf="center">Welcome to the Shoppies!</Heading>
                     <Link href="https://github.com/tobiasschlagenhaufer/shoppies/tree/master" target="_blank">
                         <Button colorScheme="facebook" leftIcon={<FaGithub />}>
-                            Code Availble on Github
+                            Code Available on Github
                         </Button>
                     </Link>
                 </HStack>
@@ -36,7 +37,7 @@ const FrontPage: React.FC<FrontPageProps> = ({}) => {
                             <HStack>
                                 <Text>TypeScript React</Text>
                                 <SiTypescript />
-                                <FaReact/>   
+                                <FaReact/>
                             </HStack>
                         </li>
                         <li>

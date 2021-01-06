@@ -39,14 +39,24 @@ export const SearchBar: React.FC<SearchBarProps> = ({refreshMovies, nominatedMov
 						setMovies([]);
 						return;
 					}
+					let apiUrl = ""
+					if (values.search.length > 0 && values.search.length < 3){
+						apiUrl = "https://www.omdbapi.com/?apikey=8140e84f&type=movie&t=" + values.search;
+						console.log('set to: ', apiUrl);
+					} else {
+						apiUrl = "https://www.omdbapi.com/?apikey=8140e84f&page=1&type=movie&s=" + values.search;
+					}
 
 					await axios
-						.get<ImdbSearch>("http://www.omdbapi.com/?apikey=8140e84f&page=1&type=movie&s=" + values.search)
+						.get(apiUrl)
 						.then(response => {
+							console.log(response)
 							if (response.data.Response === "False") {
 								throw new Error(response.data.Error); 
 							}
-							const results = rawImdbToMine(response.data.Search)
+							// cut off results to 8
+							
+							const results = rawImdbToMine(response.data.Search ? response.data.Search.slice(0,8) : [response.data] as ImdbMovie[]);
 							setMovies(results)
 							// showResults(response.data.Search);
 						})

@@ -24,7 +24,7 @@ export const PasswordField: React.FC<PasswordFieldProps> = (props) => {
 						placeholder={props.placeholder}
 					/>
 					<InputRightElement width="4.5rem">
-						<Button h="1.75rem" size="sm" onClick={handleClick}>
+						<Button bg="gray.700" h="1.75rem" size="sm" onClick={handleClick} _hover={{bg: "gray.600"}}>
 						{show ? "Hide" : "Show"}
 						</Button>
 					</InputRightElement>

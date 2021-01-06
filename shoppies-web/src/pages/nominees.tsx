@@ -29,7 +29,9 @@ const Nominees: React.FC<nomineesProps> = ({}) => {
             <Header />
             <ConstrainedBox>
                 <Box>
-                {movies.length == 0 ? "No nominated movies yet..." : null  }
+                <Heading fontSize="3xl">
+                    {movies.length == 0 ? "No nominated movies yet..." : "Top 5 Shoppies Nominations:"  }
+                </Heading>
                 {movies.map((movie, i) => (
                     <Box d="flex" ml={3} mt={3} borderRadius="lg" bg="gray.900" key={i}>
                         <Image
@@ -41,7 +43,7 @@ const Nominees: React.FC<nomineesProps> = ({}) => {
 			            />
                         <Box ml={3}>
                             <Heading>{i+1}. {movie.title} ({movie.year})</Heading>
-                            <Text mt={3}><Badge colorScheme="teal">{movie.users.length}</Badge> nomination{movie.users.length > 1 ? "s" : ""}</Text>
+                            <Text mt={3} fontSize="lg"><Badge colorScheme="teal" fontSize="xl">{movie.users.length}</Badge> nomination{movie.users.length > 1 ? "s" : ""}</Text>
                             {details[i]?.imdbID ?  
                                 <Box>
                                     <Text mt={10}>Summary: {details[i].Plot}</Text>
@@ -65,7 +67,7 @@ const Nominees: React.FC<nomineesProps> = ({}) => {
                                     colorScheme="teal"
                                     onClick={() => {
                                         axios
-                                            .get<DetailImdb>("http://www.omdbapi.com/?apikey=8140e84f&page=1&type=movie&i="+movie.imdbId)
+                                            .get<DetailImdb>("https://www.omdbapi.com/?apikey=8140e84f&page=1&type=movie&i="+movie.imdbId)
                                             .then(response => {
                                                 if (response.data.Response === "False") {
                                                     throw new Error(response.data.Error); 

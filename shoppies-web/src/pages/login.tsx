@@ -20,7 +20,6 @@ const Login: React.FC<registerProps> = ({}) => {
 			<Formik 
 				initialValues={{ username: "", password: ""}} 
 				onSubmit={ async (values, { setErrors }) => {
-					console.log(values)
 					const response = await login(values);
 					// use optional chaining so it doesn't crash when data is undefined
 					if (response.data?.login.errors) {
