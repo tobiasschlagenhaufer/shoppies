@@ -34,7 +34,7 @@ export const Movie: React.FC<MovieProps> = (movie) => {
 			// h=""
 			// maxW={movie.variant == "Result" ? "9%" : "15%"}
 			
-			maxW={movie.variant == "Result" ? "138px" : "200px"}
+			maxW={movie.variant == "Result" ? "138px" : "165px"}
 			borderWidth="1px"
 			borderRadius="lg"
 			overflow="hidden"
