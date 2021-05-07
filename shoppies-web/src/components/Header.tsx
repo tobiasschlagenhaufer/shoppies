@@ -72,7 +72,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
 					display={{ base: show ? "block" : "none", md: "block" }}
 					flexBasis={{ base: "100%", md: "auto" }}
 				>
-				{/* is user is logged in */}
+				{/* is user is logged in? */}
 				{data?.me ?
 					<Flex
 						align={["center", "center", "center", "center"]}
@@ -86,13 +86,17 @@ export const Header: React.FC<HeaderProps> = (props) => {
 							<MenuItems to="/" myvariant="link">Home</MenuItems>
 						}
 						<Menu>
-							<MenuButton border="thin solid white" mr={2} as={Button} colorScheme="pink">
+							<MenuButton
+								border="thin solid white" 
+								mr={2} 
+								as={Button} 
+								colorScheme="pink">
 								Hi, {data.me.username}!
 							</MenuButton>
 							<MenuList>
 								<MenuGroup title="Profile">
 									<MenuItem disabled={true}>My Account</MenuItem>
-									<MenuItem disabled={true}>Payments </MenuItem>
+									<MenuItem disabled={true}>Payments</MenuItem>
 								</MenuGroup>
 									<MenuDivider />
 								<MenuGroup title="Help">
